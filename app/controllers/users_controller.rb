@@ -1,4 +1,4 @@
-class ArtistsController < ApplicationController
+class UsersController < ApplicationController
   def index
     @artists = Artist.all
   end
