@@ -1,47 +1,24 @@
 class UsersController < ApplicationController
+
   def index
-    @artists = Artist.all
   end
 
-  def show
-    @artist = Artist.find(params[:id])
-  end
+  def show 
+  end 
 
-  def new
-    @artist = Artist.new
-  end
+  def new 
+  end 
 
-  def create
-    @artist = Artist.new(artist_params)
+  def create 
+  end 
 
-    if @artist.save
-      redirect_to @artist
-    else
-      render :new
-    end
-  end
+  def edit 
+  end 
 
-  def edit
-    @artist = Artist.find(params[:id])
-  end
+  def update 
+  end 
 
-  def update
-    @artist = Artist.find(params[:id])
-
-    @artist.update(artist_params)
-
-    if @artist.save
-      redirect_to @artist
-    else
-      render :edit
-    end
-  end
-
-  def destroy
-    @artist = Artist.find(params[:id])
-    @artist.destroy
-    flash[:notice] = "Artist deleted."
-    redirect_to artists_path
+  def destroy 
   end
 
   private
