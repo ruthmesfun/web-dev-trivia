@@ -1,3 +1,23 @@
 class User < ActiveRecord::Base
-  has_many :trivias
+  has_many :trivia
+  has_secure_password 
+
+  validates :username, presence: true 
+  validates :username, uniqueness: true 
+
+  validates :email, presence: true 
+  validates :email, uniqueness: true
+
+  def slug 
+    self.username.split(" ").join("-").downcase
+  end 
+
+  def self.find_by_slug(slug)
+    all_users = User.all
+    user = all_users.find do |user|
+                user.slug == slug
+             end
+    return user
+  end
+
 end

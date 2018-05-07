@@ -1,2 +1,37 @@
-<h1>User#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<header class="masthead">
+<div class="intro-body">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <h3 class="brand-heading">web dev trivia</h3>
+        <p class="intro-text">How much do you really know?
+          <br></p>
+          <br>
+        <a href="#about" class="btn btn-circle js-scroll-trigger">
+          <i class="fa fa-angle-double-down animated"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+
+<!-- Create an Account Section -->
+<section id="about" class="content-section text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+
+
+
+        <h2>Welcome, <%= "#{@user.username}" %></h2>
+
+            
+            <li>Username: <%= @user.username %> </li>
+            <li>Email Address: <%= @user.email %></li>
+            <br></br>
+            <p> <%= link_to "Edit", edit_user_path(@user) %>
+      </div>
+    </div>
+  </div>
+</section>
